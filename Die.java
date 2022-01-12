@@ -1,10 +1,15 @@
-public class Die {
+public class Die 
+{
   private int value;
   private int numSides;
+  private static int id ; // static. like a counter shared between classes
+  private int dieID ; // this will be the personal id for each die
 
   public Die(int v, int n) {
     setValue(v);
     setNumSides(n);
+    id++ ; 
+    setDieID(id);
   }
 
   public Die() {
@@ -35,6 +40,11 @@ public class Die {
     numSides = ns;
   }
 
+public void setDieID(int d)
+{
+  dieID = d ;
+}
+
   public int roll() {
     int value = (1 + (int) (numSides * Math.random()));
     this.setValue(value);
@@ -42,6 +52,6 @@ public class Die {
   }
 
   public String toString() {
-    return ("\nValue: " + value + "\nNumber of Sides: " + numSides);
+    return ("\nDie ID: " + dieID + "\nValue: " + value + "\nNumber of Sides: " + numSides);
   }
 }

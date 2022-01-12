@@ -1,9 +1,11 @@
+import java.util.* ;
+
 class Main {
   public static void main(String[] args) 
   {
     Die die = new Die();
     System.out.println(die);
-  
+   
   Die d1 = new Die();
   Die d2 = new Die();
   
@@ -25,6 +27,18 @@ System.out.println("\nd3 after being rolled:" +  d3);
   
 // seeing if d1 and d3 are equal 
 System.out.println("Are d1 and d3 equal? " + d1.equals(d3));   
+
+// testing out the DiceGames class
+
+System.out.println(" ");
+System.out.println(" ");
+
+Scanner scan = new Scanner(System.in);
+System.out.println("How many rolls of die would you like?");
+int num = scan.nextInt();
+
+DiceGames p = new DiceGames(num); 
+p.SnakeEyes(); 
 
   }
 }
